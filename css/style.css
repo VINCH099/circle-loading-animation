@@ -1,0 +1,104 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #eaeef0;
+  font-family: sans-serif;
+}
+
+.loader {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.loader span {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #eaeef0;
+  border: 6px solid #eaeef0;
+  box-shadow: -8px -8px 15px #ffffff, 8px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  background: #eaeef0;
+  border: 2px solid #eaeef0;
+  border-radius: 50%;
+  box-shadow: -8px -8px 25px #ffffff, 8px 8px 25px rgba(0, 0, 0, 0.25), inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 15px #ffffff;
+  z-index: 1;
+}
+
+.loader span i {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#ff4f8b, #ffeb3b);
+  animation: circle 1s linear infinite;
+}
+
+.text {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  animation: text 25s linear infinite;
+}
+
+.text p {
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform-origin: 0 170px;
+  font-weight: bold;
+}
+
+/* ===========  Animation  =========== */
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
