@@ -36,7 +36,7 @@ body {
   place-items: center;
 }
 
-.loader span {
+.loader i {
   position: relative;
   width: 250px;
   height: 250px;
@@ -47,7 +47,7 @@ body {
   overflow: hidden;
 }
 
-.loader span::before {
+.loader i::before {
   content: '';
   position: absolute;
   inset: 40px;
@@ -59,7 +59,8 @@ body {
   z-index: 1;
 }
 
-.loader span i {
+.loader i::after {
+  content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(#ff4f8b, #ffeb3b);
